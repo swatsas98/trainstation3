@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+>
+
+<script type="text/javascript" scr="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js">
+    $(document).ready(function()
+    {
+        $("#sbmt").on('click', function () {
+            $.ajax({
+                method: "POST",
+                url: "/register",
+                data: {email: $("#email").text(), pass: $("#pass").text()}
+            });
+        });
+    });
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<form action="action_page.php">
+    <div class="container">
+        <h1>Register</h1>
+        <script type="text/javascript" scr="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+        <script type="text/javascript">
+            alert(jQuery('a').filter('.external').length + ' external links');
+        </script>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+
+        <label for="email"><b>Email</b></label>
+        <input id="email" type="text" placeholder="Enter Email" name="email" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input id="pass" type="password" placeholder="Enter Password" name="psw" required>
+
+        <label for="psw-repeat"><b>Repeat Password</b></label>
+        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+        <hr>
+
+        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+        <button id="sbmt" type="submit" class="registerbtn">Register</button>
+    </div>
+
+    <div class="container signin">
+        <p>Already have an account? <a href="#">Sign in</a>.</p>
+    </div>
+</form>
+</body>
+</html>
